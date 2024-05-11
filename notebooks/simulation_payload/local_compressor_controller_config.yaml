@@ -1,0 +1,45 @@
+- kind: LocalCompressorController
+  max_discharge_pressure__psig: 190.0
+  measurement_keys:
+  - equipment_name: condenser_1
+    measurement_key: pressure__psig
+  - equipment_name: compressor_1
+    measurement_key: sv_position__perc
+  - equipment_name: compressor_1
+    measurement_key: compressor_speed__rpm
+  name: compressor_1_local
+  point_keys:
+  - equipment_name: compressor_1
+    point_key: sv_position__perc
+  sv_unload_key: sv_unload
+  unload_rate__perc_per_s: 0.5
+- kind: LocalCompressorController
+  max_discharge_pressure__psig: 190.0
+  measurement_keys:
+  - equipment_name: condenser_1
+    measurement_key: pressure__psig
+  - equipment_name: compressor_2
+    measurement_key: sv_position__perc
+  - equipment_name: compressor_2
+    measurement_key: compressor_speed__rpm
+  name: compressor_2_local
+  point_keys:
+  - equipment_name: compressor_2
+    point_key: sv_position__perc
+  sv_unload_key: sv_unload
+  unload_rate__perc_per_s: 0.5
+- kind: LocalCompressorController
+  max_discharge_pressure__psig: 190.0
+  measurement_keys:
+  - equipment_name: condenser_1
+    measurement_key: pressure__psig
+  - equipment_name: compressor_3
+    measurement_key: sv_position__perc
+  - equipment_name: compressor_3
+    measurement_key: compressor_speed__rpm
+  name: compressor_3_local
+  point_keys:
+  - equipment_name: compressor_3
+    point_key: sv_position__perc
+  sv_unload_key: sv_unload
+  unload_rate__perc_per_s: 0.5

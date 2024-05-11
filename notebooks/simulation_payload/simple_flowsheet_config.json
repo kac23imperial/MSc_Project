@@ -1,0 +1,478 @@
+{
+  "name": "dual_cool",
+  "kind": "process_with_rooms",
+  "equipment_list": [
+    {
+      "name": "evaporator_1",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_1",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_2",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_2",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_3",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_3",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_4",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_4",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_5",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_5",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_6",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_6",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "evaporator_7",
+      "kind": "evaporator",
+      "model": {
+        "name": "evaporator_7",
+        "surface_area__m2": 20.0,
+        "holdup__kg": 20,
+        "natural_htc__kw_m2_K": 0.25,
+        "forced_htc__kw_m2_K_rpm_hp": 0.0000207,
+        "liquid_flow__kg_s": 0.1,
+        "fan_motors__hp": 7.5,
+        "number_of_fans": 2,
+        "fan_time_constants__s": 20,
+        "liquid_solenoid_time_constant__s": 20
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "ltr_1_pump_1",
+      "kind": "pump",
+      "model": {
+        "name": "ltr_1_pump_1",
+        "pump__hp": 15.0,
+        "time_constant__s": 5
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "compressor_1",
+      "kind": "compressor",
+      "model": {
+        "name": "compressor_1",
+        "swept_vol__m3_rotation": 0.0044,
+        "motor_size__hp": 235,
+        "min_rpm": 1200.0,
+        "max_rpm": 3600.0,
+        "frac_superheat_oil_removed": 0.6,
+        "motor_efficiency": 0.96781605,
+        "motor_eff_intercept": 0.01107,
+        "rpm_time_constant__s": 20,
+        "sv_time_constant__s": 10
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null,
+      "discharge_pressure__pa": null,
+      "economizer_pressure__pa": null
+    },
+    {
+      "name": "compressor_2",
+      "kind": "compressor",
+      "model": {
+        "name": "compressor_2",
+        "swept_vol__m3_rotation": 0.0044,
+        "motor_size__hp": 235,
+        "min_rpm": 1200.0,
+        "max_rpm": 3600.0,
+        "frac_superheat_oil_removed": 0.6,
+        "motor_efficiency": 0.96781605,
+        "motor_eff_intercept": 0.01107,
+        "rpm_time_constant__s": 20,
+        "sv_time_constant__s": 10
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null,
+      "discharge_pressure__pa": null,
+      "economizer_pressure__pa": null
+    },
+    {
+      "name": "compressor_3",
+      "kind": "compressor",
+      "model": {
+        "name": "compressor_3",
+        "swept_vol__m3_rotation": 0.0044,
+        "motor_size__hp": 235,
+        "min_rpm": 3600.0,
+        "max_rpm": 3600.0,
+        "frac_superheat_oil_removed": 0.6,
+        "motor_efficiency": 0.96781605,
+        "motor_eff_intercept": 0.01107,
+        "rpm_time_constant__s": 20,
+        "sv_time_constant__s": 10
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null,
+      "discharge_pressure__pa": null,
+      "economizer_pressure__pa": null
+    },
+    {
+      "name": "condenser_1",
+      "kind": "condenser",
+      "model": {
+        "name": "condenser_1",
+        "surface_area__m2": 50.0,
+        "delta_p__pa": 5000.0,
+        "volume__m3": 5.0,
+        "natural_htc__kw_m2_K": 0.5,
+        "forced_htc__kw_m2_K_rpm_hp": 2.07e-5,
+        "fan_motors__hp": [30.0, 15.0],
+        "pump_motors__hp": [5.0],
+        "fan_time_constants__s": [15.0, 15.0],
+        "pump_time_constants__s": [20.0]
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "hpr_1",
+      "kind": "vessel",
+      "model": {
+        "name": "hpr_1",
+        "diameter__m": 0.6095999999999999,
+        "length__m": 3.4543999999999997,
+        "mass_transfer_coefficient__m_s": 0.02,
+        "default_temp__f": 75.0,
+        "shape": "cylinder",
+        "max_pressure__pa": null,
+        "orientation": "horizontal",
+        "insulation_thickness__m": 0.00254,
+        "insulation_thermal_conductivity__w_m_k": 0.05
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "ltr_1",
+      "kind": "vessel",
+      "model": {
+        "name": "ltr_1",
+        "diameter__m": 1.3716,
+        "length__m": 3.81,
+        "mass_transfer_coefficient__m_s": 0.2,
+        "default_temp__f": -15.0,
+        "shape": "cylinder",
+        "max_pressure__pa": null,
+        "orientation": "vertical",
+        "insulation_thickness__m": 0.0254,
+        "insulation_thermal_conductivity__w_m_k": 0.05
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "liquidKingValve_1",
+      "kind": "valve",
+      "model": {
+        "name": "liquidKingValve_1",
+        "flow_rate__kg_s": 1.5,
+        "time_constant__s": 60
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    },
+    {
+      "name": "flow_splitter",
+      "kind": "flow_splitter",
+      "model": {
+        "name": "flow_splitter",
+        "tau__psig": 3.0
+      },
+      "inlet_pressure__pa": null,
+      "measurements": null,
+      "actuator": null
+    }
+  ],
+  "refrigerated_rooms": [
+    {
+      "name": "room_1",
+      "kind": "refrigerated_room",
+      "model": {
+        "name": "room_1",
+        "evaporators": [
+          "evaporator_1",
+          "evaporator_2",
+          "evaporator_3",
+          "evaporator_4",
+          "evaporator_5",
+          "evaporator_6",
+          "evaporator_7"
+        ],
+        "length__m": 96.4,
+        "width__m": 96.4,
+        "height__m": 18.3,
+        "rh__perc": 70.0,
+        "product_mass_holdup__kg": 20000000.0,
+        "external_product__frac": 0.1,
+        "external_product_air_htc__kw_m2_k": 0.025,
+        "internal_product_htc__kw_m2_k": 0.0025,
+        "product_specific_surface_area__m2_kg": 0.024,
+        "product_heat_capacity__kj_kg_k": 4.186,
+        "ambient_air_pressure__pa": 101325.0,
+        "htc__kw_m2_k": 0.0025,
+        "max_sun_temp_adjustment__c": 5.0,
+        "default_temp__f": -1.0
+      }
+    }
+  ],
+  "pipe_list": [
+    {
+      "source": "evaporator_4",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_7",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_5",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_6",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_4",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_7",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_2",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1_pump_1",
+      "target": "evaporator_3",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "condenser_1",
+      "target": "hpr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_1",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "hpr_1",
+      "target": "liquidKingValve_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_5",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_2",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_6",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1",
+      "target": "compressor_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1",
+      "target": "ltr_1_pump_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1",
+      "target": "compressor_2",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "ltr_1",
+      "target": "compressor_3",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "liquidKingValve_1",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "evaporator_3",
+      "target": "ltr_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "compressor_2",
+      "target": "flow_splitter",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "compressor_3",
+      "target": "flow_splitter",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "compressor_1",
+      "target": "flow_splitter",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    },
+    {
+      "source": "flow_splitter",
+      "target": "condenser_1",
+      "flowrate__kg_s": null,
+      "enthalpy__kj_kg": null
+    }
+  ]
+}

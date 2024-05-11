@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "ck_fridge_sim"
+version = "0.0.0"
+description = "Refrigeration system simulation library"
+authors = ["Richard Pattison <richard.pattison@crossnokaye.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.26"
+scikit-learn = "^1.4"
+CoolProp = "^6.6"
+plotly = "^5.22"
+pysolar = "^0.11"
+pydantic = "^2.7"
+tqdm = "^4.66"
+pyyaml = "^6.0"
+pandas = "^2.2"
+matplotlib = "^3.8"
+networkx = "^3.3"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.24"
+ipykernel = "^6.29"
+nbformat = "^5.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/crossnokaye/fridge_sim"
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
+branch = "main"
+upload_to_pypi = false
+upload_to_release = false
+build_command = "pip install . --upgrade"

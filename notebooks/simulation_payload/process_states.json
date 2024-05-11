@@ -1,0 +1,179 @@
+{
+  "simulation_time": "2024-05-12T10:00:00-07:00",
+  "equipment_state_list": [
+    {
+      "name": "hpr_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "vessel",
+      "m_l__kg": 205.01472215009014,
+      "m_v__kg": 5.185369347045611,
+      "h_l__kj_kg": 462.3735490608877,
+      "h_v__kj_kg": 1628.2771922692837
+    },
+    {
+      "name": "ltr_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "vessel",
+      "m_l__kg": 1250.416586501078,
+      "m_v__kg": 3.6189414143787046,
+      "h_l__kj_kg": 204.6730525237108,
+      "h_v__kj_kg": 1566.3254586422229
+    },
+    {
+      "name": "condenser_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "condenser",
+      "m__kg": 23.622720057023262,
+      "h__kj_kg": 1962.0134065713098,
+      "fan_speed_1__rpm": 900.0,
+      "fan_speed_2__rpm": 900.0,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "pump_1_on": 1.0,
+      "pump_2_on": null,
+      "pump_3_on": null,
+      "pump_4_on": null
+    },
+    {
+      "name": "evaporator_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1580.4977134689157,
+      "fan_speed_1__rpm": 3600.0,
+      "fan_speed_2__rpm": 3600.0,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 1.0
+    },
+    {
+      "name": "evaporator_2",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1580.4977134689157,
+      "fan_speed_1__rpm": 3600.0,
+      "fan_speed_2__rpm": 3600.0,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 1.0
+    },
+    {
+      "name": "evaporator_3",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1580.4977134689157,
+      "fan_speed_1__rpm": 3600.0,
+      "fan_speed_2__rpm": 3600.0,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 1.0
+    },
+    {
+      "name": "evaporator_4",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1598.1611312417192,
+      "fan_speed_1__rpm": 2e-323,
+      "fan_speed_2__rpm": 2e-323,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 2.5e-323
+    },
+    {
+      "name": "evaporator_5",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1598.1611312417192,
+      "fan_speed_1__rpm": 2e-323,
+      "fan_speed_2__rpm": 2e-323,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 2.5e-323
+    },
+    {
+      "name": "evaporator_6",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1598.1611312417192,
+      "fan_speed_1__rpm": 2e-323,
+      "fan_speed_2__rpm": 2e-323,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 2.5e-323
+    },
+    {
+      "name": "evaporator_7",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "evaporator",
+      "h__kj_kg": 1598.1611312417192,
+      "fan_speed_1__rpm": 2e-323,
+      "fan_speed_2__rpm": 2e-323,
+      "fan_speed_3__rpm": null,
+      "fan_speed_4__rpm": null,
+      "fan_speed_5__rpm": null,
+      "fan_speed_6__rpm": null,
+      "liquid_solenoid_on": 2.5e-323
+    },
+    {
+      "name": "compressor_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "compressor",
+      "compressor_speed__rpm": 3600.0,
+      "sv_position__perc": 100.0
+    },
+    {
+      "name": "compressor_2",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "compressor",
+      "compressor_speed__rpm": 1976.2960254812385,
+      "sv_position__perc": 100.0
+    },
+    {
+      "name": "compressor_3",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "compressor",
+      "compressor_speed__rpm": 0.0,
+      "sv_position__perc": 0.0
+    },
+    {
+      "name": "ltr_1_pump_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "pump_on": 1.0,
+      "kind": "pump"
+    },
+    {
+      "name": "liquidKingValve_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "valve",
+      "valve_position__perc": 27.017023216195483
+    },
+    {
+      "name": "room_1",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "refrigerated_room",
+      "air_temp__c": -17.767952224561537,
+      "external_product_temp__c": -17.81928269135455,
+      "internal_product_temp__c": -18.263419305987366
+    },
+    {
+      "name": "flow_splitter",
+      "date_time": "2024-05-12T10:00:00-07:00",
+      "kind": "flow_splitter",
+      "flow_fraction_1": 1.0,
+      "flow_fraction_2": null,
+      "flow_fraction_3": null,
+      "flow_fraction_4": null
+    }
+  ]
+}

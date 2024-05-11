@@ -1,0 +1,314 @@
+controllers:
+  - kind: PI
+    integral_error_key: integral_error
+    kp: 50.0
+    max_output: 3600.0
+    setpoint: 120.0
+    measurement_keys:
+      - equipment_name: condenser_1
+        measurement_key: pressure__psig
+    min_output: 900.0
+    name: condenser_fan_controller
+    point_keys:
+      - equipment_name: condenser_1
+        point_key: fan_speed_1__rpm
+      - equipment_name: condenser_1
+        point_key: fan_speed_2__rpm
+    tau_i: 300.0
+  - active_stage_key: active_stage
+    kind: CompressorSequencer
+    deadband_high: 2.0
+    deadband_low: 2.0
+    initial_stage_idx: 0
+    measurement_keys:
+      - equipment_name: ltr_1
+        measurement_key: pressure__psig
+    min_rpm_dict:
+      1: 1800.0
+      2: 1800.0
+      3: 3550.0
+    name: lss_1
+    pi_controller:
+      integral_error_key: integral_error
+      kind: CompressorPI
+      kp: 5.0
+      max_output: 100.0
+      measurement_keys:
+        - equipment_name: ltr_1
+          measurement_key: pressure__psig
+      min_output: 0.0
+      min_rpm: 1800.0
+      setpoint: 3.0
+      name: compressor_pi
+      point_keys: []
+      tau_i: 300.0
+    point_keys:
+      - equipment_name: compressor_1
+        point_key: compressor_speed__rpm
+      - equipment_name: compressor_1
+        point_key: sv_position__perc
+      - equipment_name: compressor_2
+        point_key: compressor_speed__rpm
+      - equipment_name: compressor_2
+        point_key: sv_position__perc
+      - equipment_name: compressor_3
+        point_key: compressor_speed__rpm
+      - equipment_name: compressor_3
+        point_key: sv_position__perc
+    shutdown_pressure__psig: -3.0
+    stage_down_timer__s: 300
+    stage_down_timer_key: stage_down_timer
+    stage_up_timer__s: 600
+    stage_up_timer_key: stage_up_timer
+    stages:
+      - equipment_on_list:
+          - false
+          - false
+          - false
+        idx: 0
+        trim_idx: null
+      - equipment_on_list:
+          - true
+          - false
+          - false
+        idx: 1
+        trim_idx:
+          - 0
+          - 1
+      - equipment_on_list:
+          - true
+          - true
+          - false
+        idx: 2
+        trim_idx:
+          - 2
+          - 3
+      - equipment_on_list:
+          - true
+          - true
+          - true
+        idx: 3
+        trim_idx:
+          - 4
+          - 5
+  # - kind: OnOff
+  #   last_output_key: last_output
+  #   max_output: 100.0
+  #   setpoint: 33.0
+  #   measurement_keys:
+  #     - equipment_name: hpr_1
+  #       measurement_key: level__perc
+  #   min_output: 0.0
+  #   deadband_high: 2.0
+  #   deadband_low: 2.0
+  #   name: hpr_level_control
+  #   point_keys:
+  #     - equipment_name: liquidKingValve_1
+  #       point_key: valve_position__perc
+  #   process_gain: -1
+  - kind: PI
+    integral_error_key: integral_error
+    kp: -5.0
+    max_output: 100.0
+    measurement_keys:
+      - equipment_name: ltr_1
+        measurement_key: level__perc
+    min_output: 0.0
+    setpoint: 33.0
+    name: hpr_level_control
+    point_keys:
+      - equipment_name: liquidKingValve_1
+        point_key: valve_position__perc
+    tau_i: 300.0
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_1
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_1_controller
+    point_keys:
+      - equipment_name: evaporator_1
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_1
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_1
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_1
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_2
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_2_controller
+    point_keys:
+      - equipment_name: evaporator_2
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_2
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_2
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_2
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_3
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_3_controller
+    point_keys:
+      - equipment_name: evaporator_3
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_3
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_3
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_3
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_4
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_4_controller
+    point_keys:
+      - equipment_name: evaporator_4
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_4
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_4
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_4
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_5
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_5_controller
+    point_keys:
+      - equipment_name: evaporator_5
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_5
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_5
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_5
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    setpoint: -17.0
+    last_output_key: last_output
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_6
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_6_controller
+    point_keys:
+      - equipment_name: evaporator_6
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_6
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_6
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_6
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: EvaporatorOnOff
+    deadband_high: 0.5555555555555556
+    deadband_low: 0.5555555555555556
+    last_output_key: last_output
+    setpoint: -17.0
+    max_output: 1.0
+    measurement_keys:
+      - equipment_name: evaporator_7
+        measurement_key: room_temp__c
+    min_output: 0.0
+    name: evaporator_7_controller
+    point_keys:
+      - equipment_name: evaporator_7
+        point_key: liquid_solenoid_on
+      - equipment_name: evaporator_7
+        point_key: fan_speed_1__rpm
+      - equipment_name: evaporator_7
+        point_key: fan_speed_2__rpm
+      - equipment_name: evaporator_7
+        point_key: fan_speed_3__rpm
+    process_gain: -1
+  - kind: LocalCompressorController
+    max_discharge_pressure__psig: 190.0
+    measurement_keys:
+      - equipment_name: condenser_1
+        measurement_key: pressure__psig
+      - equipment_name: compressor_1
+        measurement_key: sv_position__perc
+      - equipment_name: compressor_1
+        measurement_key: compressor_speed__rpm
+    name: compressor_1_local
+    point_keys:
+      - equipment_name: compressor_1
+        point_key: sv_position__perc
+    sv_unload_key: sv_unload
+    unload_rate__perc_per_s: 0.5
+  - kind: LocalCompressorController
+    max_discharge_pressure__psig: 190.0
+    measurement_keys:
+      - equipment_name: condenser_1
+        measurement_key: pressure__psig
+      - equipment_name: compressor_2
+        measurement_key: sv_position__perc
+      - equipment_name: compressor_2
+        measurement_key: compressor_speed__rpm
+    name: compressor_2_local
+    point_keys:
+      - equipment_name: compressor_2
+        point_key: sv_position__perc
+    sv_unload_key: sv_unload
+    unload_rate__perc_per_s: 0.5
+  - kind: LocalCompressorController
+    max_discharge_pressure__psig: 190.0
+    measurement_keys:
+      - equipment_name: condenser_1
+        measurement_key: pressure__psig
+      - equipment_name: compressor_3
+        measurement_key: sv_position__perc
+      - equipment_name: compressor_3
+        measurement_key: compressor_speed__rpm
+    name: compressor_3_local
+    point_keys:
+      - equipment_name: compressor_3
+        point_key: sv_position__perc
+    sv_unload_key: sv_unload
+    unload_rate__perc_per_s: 0.5
