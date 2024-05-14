@@ -27,6 +27,8 @@ class RoomStateDerivative(RoomState, StateDerivativeBase):
 class RoomMeasurement(MeasurementBase):
     kind: Literal["refrigerated_room"] = "refrigerated_room"
     air_temp__f: float
+    ext_product_temp__f: float
+    int_product_temp__f: float
 
 
 class RefrigeratedRoom(ModelBase):
@@ -178,7 +180,11 @@ class RefrigeratedRoom(ModelBase):
 
     def initialize(self, date_time: datetime) -> tuple[RoomState, RoomMeasurement]:
         room_measurement = RoomMeasurement(
-            name=self.name, date_time=date_time, air_temp__f=self.default_temp__f
+            name=self.name,
+            date_time=date_time,
+            air_temp__f=self.default_temp__f,
+            ext_product_temp__f=self.default_temp__f,
+            int_product_temp__f=self.default_temp__f,
         )
         return self.get_state_from_measurement(room_measurement), room_measurement
 

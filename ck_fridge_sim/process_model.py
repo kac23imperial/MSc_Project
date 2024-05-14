@@ -527,6 +527,12 @@ class ProcessModel(BaseModel):
                         ]
                     )
                 ),
+                int_product_temp__f=UnitConversions.celsius_to_fahrenheit(
+                    room_state.internal_product_temp__c
+                ),
+                ext_product_temp__f=UnitConversions.celsius_to_fahrenheit(
+                    room_state.external_product_temp__c
+                ),
             )
 
         # then solve for the compressor flows
