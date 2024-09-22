@@ -127,6 +127,8 @@ class EvaporatorModel(ModelBase):
 
     def get_power__kw(self, simulation_point: EvaporatorTimePoint) -> float:
         fan_speeds__rpm = self._get_fans_list(simulation_point)
+        # print("simulation_point: ", simulation_point)
+        # print("Fan speeds: ", fan_speeds__rpm)
         return sum(
             UnitConversions.hp_to_kw(self.fan_motors__hp) * speed / 3600
             for speed in fan_speeds__rpm

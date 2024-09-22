@@ -604,18 +604,58 @@ class ProcessModel(BaseModel):
             else None,
         )
 
+        # total_refrigeration_power__kw = 0
+        # for condenser_measurement in self.get_condenser_measurements():
+        #     total_refrigeration_power__kw += condenser_measurement.condenser_power__kw
+        #     # print(f"1: {condenser_measurement.condenser_power__kw}")
+
+        # for evaporator_measurement in self.get_evaporator_measurements():
+        #     total_refrigeration_power__kw += evaporator_measurement.evaporator_power__kw
+        #     # print(f"2: {evaporator_measurement.evaporator_power__kw}")
+
+        # for pump_measurement in self.get_pump_measurements():
+        #     total_refrigeration_power__kw += pump_measurement.pump_power__kw
+        #     # print(f"3: {pump_measurement.pump_power__kw}")
+
+        # for compressor_measurement in self.get_compressor_measurements():
+        #     total_refrigeration_power__kw += compressor_measurement.power_use__kw
+        #     # print(f"2: {compressor_measurement.power_use__kw}")
+
         total_refrigeration_power__kw = 0
+        # print(f"Initial total_refrigeration_power__kw: {total_refrigeration_power__kw}")
+
+        # Accumulate condenser power
         for condenser_measurement in self.get_condenser_measurements():
             total_refrigeration_power__kw += condenser_measurement.condenser_power__kw
+            # print(f"Added condenser power: {condenser_measurement.condenser_power__kw}, running total: {total_refrigeration_power__kw}")
 
+        # Accumulate evaporator power
         for evaporator_measurement in self.get_evaporator_measurements():
             total_refrigeration_power__kw += evaporator_measurement.evaporator_power__kw
+            # print(f"Added evaporator power: {evaporator_measurement.evaporator_power__kw}, running total: {total_refrigeration_power__kw}")
 
+        # Accumulate pump power
         for pump_measurement in self.get_pump_measurements():
             total_refrigeration_power__kw += pump_measurement.pump_power__kw
+            # print(f"Added pump power: {pump_measurement.pump_power__kw}, running total: {total_refrigeration_power__kw}")
 
+        # Accumulate compressor power
         for compressor_measurement in self.get_compressor_measurements():
             total_refrigeration_power__kw += compressor_measurement.power_use__kw
+            # print(f"Added compressor power: {compressor_measurement.power_use__kw}, running total: {total_refrigeration_power__kw}")
+        
+        condenser_measurements = self.get_condenser_measurements()
+        evaporator_measurements = self.get_evaporator_measurements()
+        pump_measurements = self.get_pump_measurements()
+        compressor_measurements = self.get_compressor_measurements()
+
+        # print("Condenser Measurements:", [(m.name, m.condenser_power__kw) for m in condenser_measurements])
+        # print("Evaporator Measurements:", [(m.name, m.evaporator_power__kw) for m in evaporator_measurements])
+        # print("Pump Measurements:", [(m.name, m.pump_power__kw) for m in pump_measurements])
+        # print("Compressor Measurements:", [(m.name, m.power_use__kw) for m in compressor_measurements])
+
+
+        # print(f"Final total_refrigeration_power__kw: {total_refrigeration_power__kw}")
 
         self.building_measurement = BuildingMeasurement(
             name=self.name,
@@ -803,6 +843,13 @@ class ProcessModel(BaseModel):
         state: FullProcessState,
         disturbances: Disturbances,
     ) -> FullProcessStateDerivative:
+        # DELETE LATER
+        # print(f"Getting state derivatives for {state.equipment_name}")
+        # # Log input state details for compressor
+        # if state.equipment_name == "compressor_1":
+        #     print(f"Compressor Speed: {state.compressor_speed__rpm}")
+        #     print(f"SV position perc: {state.sv_position__perc}")
+        # DELETE LATER
         self.solve_flowsheet(state, disturbances)
         return self.solve_for_state_derivatives(state, disturbances)
 

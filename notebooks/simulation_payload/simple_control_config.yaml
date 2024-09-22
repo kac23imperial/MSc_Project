@@ -8,7 +8,7 @@ controllers:
       - equipment_name: condenser_1
         measurement_key: pressure__psig
     min_output: 900.0
-    name: condenser_fan_controller
+    name: condenser_fan_controller #
     point_keys:
       - equipment_name: condenser_1
         point_key: fan_speed_1__rpm
@@ -41,7 +41,7 @@ controllers:
       setpoint: 3.0
       name: compressor_pi
       point_keys: []
-      tau_i: 300.0
+      tau_i: 300.0 #300
     point_keys:
       - equipment_name: compressor_1
         point_key: compressor_speed__rpm
@@ -55,8 +55,8 @@ controllers:
         point_key: compressor_speed__rpm
       - equipment_name: compressor_3
         point_key: sv_position__perc
-    shutdown_pressure__psig: -3.0
-    stage_down_timer__s: 300
+    shutdown_pressure__psig: -3.0 #-3.0
+    stage_down_timer__s: 300 #300
     stage_down_timer_key: stage_down_timer
     stage_up_timer__s: 600
     stage_up_timer_key: stage_up_timer
@@ -268,7 +268,7 @@ controllers:
         point_key: fan_speed_3__rpm
     process_gain: -1
   - kind: LocalCompressorController
-    max_discharge_pressure__psig: 190.0
+    max_discharge_pressure__psig: 190.0 # only one MAIN MV
     measurement_keys:
       - equipment_name: condenser_1
         measurement_key: pressure__psig

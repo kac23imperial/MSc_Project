@@ -3,15 +3,15 @@
     {
       "name": "integral_error",
       "controller_name": "condenser_fan_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 2121.5670856901415,
       "target_value": null,
-      "derivative": 0
+      "derivative": 0.0
     },
     {
       "name": "stage_up_timer",
       "controller_name": "lss_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0,
       "target_value": 0,
       "derivative": null
@@ -19,7 +19,7 @@
     {
       "name": "stage_down_timer",
       "controller_name": "lss_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0,
       "target_value": 0,
       "derivative": null
@@ -27,7 +27,7 @@
     {
       "name": "active_stage",
       "controller_name": "lss_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 2,
       "target_value": null,
       "derivative": null
@@ -35,7 +35,7 @@
     {
       "name": "integral_error",
       "controller_name": "hpr_level_control",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": -1555.9057378488924,
       "target_value": null,
       "derivative": -0.2808648169037653
@@ -43,7 +43,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_1_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 1.0,
       "target_value": 1.0,
       "derivative": null
@@ -51,7 +51,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_2_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 1.0,
       "target_value": 1.0,
       "derivative": null
@@ -59,7 +59,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_3_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 1.0,
       "target_value": 1.0,
       "derivative": null
@@ -67,7 +67,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_4_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0.0,
       "target_value": 0.0,
       "derivative": null
@@ -75,7 +75,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_5_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0.0,
       "target_value": 0.0,
       "derivative": null
@@ -83,7 +83,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_6_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0.0,
       "target_value": 0.0,
       "derivative": null
@@ -91,7 +91,7 @@
     {
       "name": "last_output",
       "controller_name": "evaporator_7_controller",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 0.0,
       "target_value": 0.0,
       "derivative": null
@@ -99,7 +99,7 @@
     {
       "name": "integral_error",
       "controller_name": "compressor_pi",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "value": 3813.6590747315468,
       "target_value": null,
       "derivative": -1.8608939937096576

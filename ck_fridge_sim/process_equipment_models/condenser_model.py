@@ -238,6 +238,8 @@ class CondenserModel(ModelBase):
             pressure__pa=UnitConversions.psig_to_pascal(measurement.pressure__psig),
             quality=1.0,
         )
+        # print(f"CONDENSER ------ vapor_thermo: {vapor_thermo}")
+        # print(f"CONDENSER ------ vapor_thermo: {vapor_thermo.enthalpy__kj_kg}")
         return CondenserState(
             name=simulation_point.name,
             date_time=simulation_point.date_time,

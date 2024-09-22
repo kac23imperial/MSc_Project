@@ -23,7 +23,7 @@ class StepResult(BaseModel):
 
 class SolverBase(BaseModel, ABC):
     initial_time_step__s: float = 1
-    max_error_steps: int = 10
+    max_error_steps: int = 15 # changed, initially 10.
 
     @abstractmethod
     def _step(
@@ -43,10 +43,11 @@ class SolverBase(BaseModel, ABC):
         process_model: ProcessModel,
         process_states: FullProcessState,
         disturbances: Disturbances,
-        verbose: bool = False,
+        verbose: bool = False, # changed to True
     ) -> StepResult:
         time_step__s = last_step_length__s
         n_error_steps = 0
+        tb = ""  # Initialize tb to avoid UnboundLocalError
         while n_error_steps < self.max_error_steps:
             try:
                 step_result = self._step(
@@ -135,13 +136,78 @@ class RK12(SolverBase):
                 # calculate the infinity norm
                 error = np.max(error_vector)
 
-            limiting_arg = process_states.state_args_vector[np.argmax(error_vector)]
+            limiting_arg = process_states.state_args_vector[np.argmax(error_vector)] # LOOOK HERE!
+            # DELETE HERE
+            # Get the actual value of the limiting state parameter
+            # limiting_value = getattr(process_states, limiting_arg[1])  # This assumes a direct attribute access
+
+            # compressor_speeds_1 = [] worked from here.
+            # compressor_speeds_2 = []
+            # compressor_speeds_3 = []
+
+            # # Process each state to collect compressor speeds
+            # for state in process_states.sorted_equipment_state_list:
+            #     if state.kind == "compressor":
+            #         if state.name == "compressor_1":
+            #             compressor_speeds_1.append(state.compressor_speed__rpm)
+            #         elif state.name == "compressor_2":
+            #             compressor_speeds_2.append(state.compressor_speed__rpm)
+            #         elif state.name == "compressor_3":
+            #             compressor_speeds_3.append(state.compressor_speed__rpm)
+
+            # import matplotlib.pyplot as plt
+
+            # plt.figure(figsize=(12, 8))
+            # plt.plot(compressor_speeds_1, label='Compressor 1 Speed (rpm)', marker='o')
+            # plt.plot(compressor_speeds_2, label='Compressor 2 Speed (rpm)', marker='x')
+            # plt.plot(compressor_speeds_3, label='Compressor 3 Speed (rpm)', marker='^')
+
+            # plt.title('Compressor Speeds Over Time')
+            # plt.xlabel('Simulation Steps')
+            # plt.ylabel('Compressor Speed (rpm)')
+            # plt.legend()
+            # plt.grid(True)
+            # plt.show()
+                        
+            # print(f"Limiting Equipment: {limiting_arg[0]}")
+            # print(f"Limiting State Parameter: {limiting_arg[1]}")
+            # print(f"Limiting Value: {limiting_value}")
+            # Fetch the specific state object and parameter value
+
+            # limiting_equipment = limiting_arg[0]
+            # limiting_parameter = limiting_arg[1]
+
+            # Fetch the specific state object and parameter value
+            # specific_state = next(filter(lambda x: x.name == limiting_equipment, process_states.sorted_equipment_state_list), None)
+            # if specific_state:
+            #     limiting_value = getattr(specific_state, limiting_parameter, None)
+            #     print(f"Limiting Equipment: {limiting_equipment}")
+            #     print(f"Limiting State Parameter: {limiting_parameter}")
+            #     print(f"Limiting Value: {limiting_value}")
+
+
+            # DELETE HERE
+            compressor_1_speed = next(
+                (state.compressor_speed__rpm for state in process_states.sorted_equipment_state_list if state.name == "compressor_1"),
+                None
+            )
             # Adjust time step
             error = max(1e-6, error)
             correction_factor = min(
                 1.1, max(0.6, (self.relative_tolerance / error) ** (1 / 2))
             )
             if error < self.relative_tolerance:
+                # if compressor_1_speed is not None:
+                    # print(f"Simulation Time: {simulation_time}")
+                    # print(f"Compressor 1 Speed (rpm): {compressor_1_speed}")
+
+                # print(f"High Error Detected at Simulation Time: {simulation_time}")
+                # print(f"State Vector (RK2): {states_rk2_step.state_vector}")
+                # print(f"State Vector (Dual Euler): {states_dual_euler_step.state_vector}")
+                # print(f"Process State Vector: {process_states.state_vector}")
+                # print(f"Error Vector: {error_vector}")
+                # print(f"Limiting Argument: {limiting_arg}")
+                # print(f"Error Norm: {error}")
                 next_step_length__s = min(
                     self.max_step__s, time_step__s * correction_factor
                 )

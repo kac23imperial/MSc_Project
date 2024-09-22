@@ -162,6 +162,8 @@ class VesselModel(ModelBase):
         return float(level__perc)
 
     def level__m(self, liquid_density__kg_m3: float, m_l__kg: float) -> float:
+        # DELETE LATER
+        # import traceback
         volume_liquid__m3 = m_l__kg / liquid_density__kg_m3
         if self.orientation == "vertical":
             level__m = volume_liquid__m3 / self.volume__m3 * self.length__m
@@ -170,6 +172,7 @@ class VesselModel(ModelBase):
             rad = self.diameter__m / 2
             func = self._get_level__m_func(fill_fraction, rad)
             level__m = fsolve(func, rad)[0]
+            # traceback.print_stack() # DELETE AS WELL
         else:
             raise NotImplementedError("The orientation must be vertical or horizontal.")
 
@@ -190,9 +193,14 @@ class VesselModel(ModelBase):
             ) / (r**2 * np.pi)
         else:
             raise NotImplementedError("The orientation must be vertical or horizontal.")
-
+        
+        # print(f"----GET STATE LEVEL FUNCTION----")
         m_l__kg = fill_fraction * self.volume__m3 * liquid_density__kg_m3
         m_v__kg = (1 - fill_fraction) * self.volume__m3 * vapor_density__kg_m3
+        # print(f"Fill fraction: {fill_fraction}")
+        # print(f"volume__m3: {self.volume__m3}")
+        # print(f"m_l__kg: {m_l__kg}")
+        # print(f"m_v__kg: {m_v__kg}")
         return m_l__kg, m_v__kg
 
     def get_vessel_heat_rate__kw(
@@ -298,6 +306,10 @@ class VesselModel(ModelBase):
             liquid_thermo.density__kg_m3,
             vapor_thermo.density__kg_m3,
         )
+        # print(f"measurement.level__m: {measurement.level__m}")
+        # print(f"liquid_thermo.density__kg_m3: {liquid_thermo.density__kg_m3}")
+        # print(f"vapor_thermo.density__kg_m3: {vapor_thermo.density__kg_m3}")
+        
         return VesselState(
             name=measurement.name,
             date_time=measurement.date_time,

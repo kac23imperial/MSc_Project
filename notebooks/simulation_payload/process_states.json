@@ -1,9 +1,9 @@
 {
-  "simulation_time": "2024-05-12T10:00:00-07:00",
+  "simulation_time": "2024-07-15T00:00:00-07:00",
   "equipment_state_list": [
     {
       "name": "hpr_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "vessel",
       "m_l__kg": 205.01472215009014,
       "m_v__kg": 5.185369347045611,
@@ -12,7 +12,7 @@
     },
     {
       "name": "ltr_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "vessel",
       "m_l__kg": 1250.416586501078,
       "m_v__kg": 3.6189414143787046,
@@ -21,7 +21,7 @@
     },
     {
       "name": "condenser_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "condenser",
       "m__kg": 23.622720057023262,
       "h__kj_kg": 1962.0134065713098,
@@ -36,7 +36,7 @@
     },
     {
       "name": "evaporator_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1580.4977134689157,
       "fan_speed_1__rpm": 3600.0,
@@ -49,7 +49,7 @@
     },
     {
       "name": "evaporator_2",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1580.4977134689157,
       "fan_speed_1__rpm": 3600.0,
@@ -62,7 +62,7 @@
     },
     {
       "name": "evaporator_3",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1580.4977134689157,
       "fan_speed_1__rpm": 3600.0,
@@ -75,7 +75,7 @@
     },
     {
       "name": "evaporator_4",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1598.1611312417192,
       "fan_speed_1__rpm": 2e-323,
@@ -88,7 +88,7 @@
     },
     {
       "name": "evaporator_5",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1598.1611312417192,
       "fan_speed_1__rpm": 2e-323,
@@ -101,7 +101,7 @@
     },
     {
       "name": "evaporator_6",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1598.1611312417192,
       "fan_speed_1__rpm": 2e-323,
@@ -114,7 +114,7 @@
     },
     {
       "name": "evaporator_7",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "evaporator",
       "h__kj_kg": 1598.1611312417192,
       "fan_speed_1__rpm": 2e-323,
@@ -127,40 +127,40 @@
     },
     {
       "name": "compressor_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "compressor",
       "compressor_speed__rpm": 3600.0,
       "sv_position__perc": 100.0
     },
     {
       "name": "compressor_2",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "compressor",
       "compressor_speed__rpm": 1976.2960254812385,
       "sv_position__perc": 100.0
     },
     {
       "name": "compressor_3",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "compressor",
       "compressor_speed__rpm": 0.0,
       "sv_position__perc": 0.0
     },
     {
       "name": "ltr_1_pump_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "pump_on": 1.0,
       "kind": "pump"
     },
     {
       "name": "liquidKingValve_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "valve",
       "valve_position__perc": 27.017023216195483
     },
     {
       "name": "room_1",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "refrigerated_room",
       "air_temp__c": -17.767952224561537,
       "external_product_temp__c": -17.81928269135455,
@@ -168,7 +168,7 @@
     },
     {
       "name": "flow_splitter",
-      "date_time": "2024-05-12T10:00:00-07:00",
+      "date_time": "2024-07-15T00:00:00-07:00",
       "kind": "flow_splitter",
       "flow_fraction_1": 1.0,
       "flow_fraction_2": null,

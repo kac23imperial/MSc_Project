@@ -1,0 +1,51 @@
+Metadata-Version: 2.0
+Name: free
+Version: 0.0.2
+Summary: Free yourself from CAPTCHAs!
+Home-page: http://free.totalgood.org
+Author: Hobson Lane
+Author-email: github@totalgood.com
+License: none
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Human Machine Interfaces
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Internet :: WWW/HTTP :: Browsers
+Classifier: Framework :: Scrapy
+Requires-Dist: django (>=1.11.0<1.12)
+Requires-Dist: jupyter (>=1.0.0<1.1.0)
+Requires-Dist: keras (>=2.0.6<2.1)
+Requires-Dist: matplotlib (>=2.0.2<2.1)
+Requires-Dist: pandas (>=0.20.3<0.21)
+Requires-Dist: plotly (>=2.0.12<2.1.0)
+Requires-Dist: pytesseract (>=0.1.7<0.2)
+Requires-Dist: scikit-learn (>=0.19<0.20)
+Requires-Dist: seaborn (>=0.8<0.9)
+
+# free
+
+Free yourself from captcha traps!
+
+
+## Description
+
+Uses pytesseract and custom neural nets to mimic human behavior at captcha prompts.
+
+## Installation
+
+```bash
+pip install free
+```
+
+## Contribute
+
+```bash
+git clone https://github.com/totalgood/free.git
+```
+
+
+

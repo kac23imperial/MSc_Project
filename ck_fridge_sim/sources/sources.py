@@ -17,6 +17,7 @@ class SourceBase(BaseModel, ABC):
         "sinusoid",
         "sun_angle_altitude",
         "sun_angle_azimuth",
+        # "random",
     ]
 
     @abstractmethod
@@ -158,6 +159,13 @@ class SunAngleAzimuth(SunAngleAltitude):
                 get_azimuth(self.latitude__deg, self.longitude__deg, time) * np.pi / 180
             )
 
+# class RandomSource(SourceBase):
+#     kind: Literal['random'] = 'random'
+#     low: float
+#     high: float
+
+#     def get_value(self, time: datetime):
+#         return np.random.uniform(self.low, self.high)
 
 Source = Annotated[
     Constant
@@ -167,5 +175,6 @@ Source = Annotated[
     | Sinusoid
     | SunAngleAltitude
     | SunAngleAzimuth,
+    # | RandomSource,
     Field(discriminator="kind"),
 ]

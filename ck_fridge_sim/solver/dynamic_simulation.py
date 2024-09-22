@@ -59,6 +59,7 @@ class DynamicSimulation(BaseModel):
 
     def simulate(
         self,
+        action: np.ndarray, # ADDED
         verbose: bool = False,
         callback: Callable[[float], None] | None = None,
     ) -> tuple[
@@ -67,6 +68,10 @@ class DynamicSimulation(BaseModel):
         list[list[TimePoint]],
     ]:
         time_delta = self.end_datetime - self.start_datetime
+        # print(f"----------------------------------------")
+        # print(f"Debug start time; {self.start_datetime}")
+        # print(f"Debug end time; {self.end_datetime}")
+        # print(f"Debug delta time; {time_delta}")
         unit, scale = self.get_unit_scale(time_delta)
         end_time__s = time_delta.total_seconds()
 
@@ -87,13 +92,17 @@ class DynamicSimulation(BaseModel):
             )
         while time <= end_time__s:
             simulation_time = self.start_datetime + timedelta(seconds=time)
-            self.control_system.update_settings(self.settings, simulation_time)
+
+            self.control_system.update_settings_by_action(self.settings, action, simulation_time)
+
+            # print(f"Update settings with action: {action} at {time}")
             self.control_system.action(
                 self.control_states,
                 self.process_model.get_measurements(),
                 self.process_model.get_actuators(),
                 simulation_time,
             )
+
             step_result = self.solver.step(
                 next_time_step__s,
                 simulation_time,
@@ -102,8 +111,17 @@ class DynamicSimulation(BaseModel):
                 self.disturbances,
                 verbose=verbose,
             )
+
             if step_result.error_message:
-                break
+                print("------------Current Process States with Error-----------")
+                for equipment_state in self.process_states.equipment_state_list:
+                    print(f"Equipment: {equipment_state.name}")
+                    # Assuming ModelState has attributes to represent its state, adjust accordingly
+                    for attribute_name, attribute_value in equipment_state.__dict__.items():
+                        print(f"  {attribute_name}: {attribute_value}")
+                # print(f"Solver error at time {time}: {step_result.error_message}")  # Just print the error
+                error_message = f"Solver error at time {time}: {step_result.error_message}"  # Assign the message to the variable
+                raise RuntimeError(error_message)  # Raise the exception with the message
 
             self.process_states = step_result.new_process_state
             next_time_step__s = step_result.next_step_length__s
@@ -138,7 +156,8 @@ class DynamicSimulation(BaseModel):
             # final time step
             if time + next_time_step__s > end_time__s:
                 next_time_step__s = end_time__s - time
-                if next_time_step__s == 0:
+                if next_time_step__s == 0:  # Changed from `== 0`
+                    # print(f"Final time step error at time {time}: {next_time_step__s}")
                     break
 
         if not callback:
@@ -147,6 +166,12 @@ class DynamicSimulation(BaseModel):
         if time < end_time__s:
             print(f"Simulation failed to reach end time: {end_time__s}")
 
+        # for equipment_state in self.process_states.equipment_state_list:
+        #     print(f"Equipment: {equipment_state.name}")
+        #     # Assuming ModelState has attributes to represent its state, adjust accordingly
+        #     for attribute_name, attribute_value in equipment_state.__dict__.items():
+        #         print(f"  {attribute_name}: {attribute_value}")
+                
         return (
             OdeResult(
                 t=np.array(time_list),
@@ -157,6 +182,12 @@ class DynamicSimulation(BaseModel):
             measurement_list,
             actuator_list,
         )
+    
+    def is_hpr_controller(self):
+        for setting in self.settings:
+            if setting.name == "HPR-1|level_setpoint" and setting.controller_name == "hpr_level_control":
+                return True
+        return False
 
     def plot_results(
         self,
@@ -193,7 +224,7 @@ class DynamicSimulation(BaseModel):
             height=100 + len(point_names) * 300,
             width=1000,
             showlegend=True,
-            template="plotly_dark",
+            template="plotly_white",
         )
 
         return fig
@@ -204,6 +235,11 @@ class DynamicSimulation(BaseModel):
         measurement_list: list[list[Measurement]],
         actuators_list: list[list[TimePoint]],
     ) -> pd.DataFrame:
+        # # Debugging: Print original solution.t and their types
+        # print("Original solution.t values and types:")
+        # for t in solution.t:
+        #     print(f"value: {t}, type: {type(t)}")
+
         state_list = [
             self.process_states.set_from_vector(
                 state.tolist(), self.start_datetime + timedelta(seconds=time)

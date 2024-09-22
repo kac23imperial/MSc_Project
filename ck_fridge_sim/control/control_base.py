@@ -79,9 +79,11 @@ class ControllerSetting(BaseModel):
 
     def update_value(self, time: datetime) -> None:
         if self.source is None:
+            # print(f"Source {self.source} not found for Controller {self.name}")
             return
-
+        
         self.value = self.source.get_value(time)
+        print(f"Setting value 1: {self.value}")
 
 
 class Setpoint(BaseModel):
